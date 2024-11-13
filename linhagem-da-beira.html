@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>Linhares da Beira</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: gray;
+        }
+
+        /* Estilo para o Slideshow */
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .video-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+
+        /* Mapa e Tempo */
+        .mapa-e-tempo {
+            display: flex;
+            /* Usar flexbox para alinhar lado a lado */
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+
+        }
+
+
+        .mapa-e-tempo .mapa {
+            width: 30%;
+            padding-right: 100px;
+
+        }
+
+        .mapa-e-tempo .tempo {
+            width: 35%;
+            padding-left: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Aldeias Históricas</a></li>
+            <li><a href="almeida.html">Almeida</a></li>
+            <li><a href="castelo-rodrigo.html">Castelo Rodrigo</a></li>
+            <li><a href="marialva.html">Marialva</a></li>
+            <li><a href="monsanto.html">Monsanto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slideshow -->
+    <div id="linharesCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagens/linhares da beira/linhares2.jpg" alt="Linhares da Beira">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/linhares da beira/linhares3.jpg" alt="Linhares da Beira">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/linhares da beira/linhares4.jpg" alt="Linhares da Beira">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/linhares da beira/linhares5.jpg" alt="Linhares da Beira">
+            </div>
+        </div>
+
+        <!-- Controles do Carrossel -->
+        <a class="carousel-control-prev" href="#linharesCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#linharesCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+
+    <!-- Mapa e Previsão do Tempo -->
+    <div class="mapa-e-tempo">
+        <!-- Mapa -->
+        <div class="mapa">
+            <h3>Como chegar a Linhares da Beira</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30827.485594324007!2d-7.3589980000000005!3d40.526094999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3d4d9b7f576101%3A0xa2302921f7b77b17!2sLinhares%20da%20Beira!5e0!3m2!1sen!2spt!4v1616513194265!5m2!1sen!2spt"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Previsão do Tempo -->
+        <div class="tempo">
+            <h3>Como vai estar o Tempo</h3>
+            <div id="weather"></div>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <h3>Vídeo sobre Linhares da Beira</h3>
+
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zbXLz3ur_V8" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        <p>Autor do projeto: Sérgio Ricardo B. de Araújo 2024©All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Função para obter a previsão do tempo
+        async function getWeather() {
+
+            const response = await fetch(`https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1090700.json`);
+            const data = await response.json();
+
+            const weatherDiv = document.getElementById('weather');
+            weatherDiv.innerHTML = ''; // Limpar conteúdo anterior
+
+            data.data.forEach(day => {
+                const weatherDay = document.createElement('div');
+                weatherDay.classList.add('weather-day');
+
+                // Converter timestamp para data
+                const date = new Date(day.forecastDate);
+
+                weatherDay.innerHTML = `
+                    <div>${date.toLocaleDateString('pt-PT')}</div>
+                    <div>Max: ${day.tMax}°C / Min: ${day.tMin}°C</div>
+                    <div class="weather-icon">💧 Probabilidade de precipitação: ${day.precipitaProb}%</div>
+                `;
+                weatherDiv.appendChild(weatherDay);
+            });
+        }
+
+
+        window.onload = getWeather;
+    </script>
+
+</body>
+
+</html>

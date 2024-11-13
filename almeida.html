@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>Almeida</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: gray;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .mapa-e-tempo {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+
+        .mapa-e-tempo .mapa {
+            width: 45%;
+            padding-right: 100px;
+        }
+
+        .mapa-e-tempo .tempo {
+            width: 35%;
+            padding-left: 100px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 560px;
+        }
+
+        .video-texto-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px auto;
+    max-width: 960px;
+}
+
+.video-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.texto-section {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Aldeias Históricas</a></li>
+            <li><a href="castelo-rodrigo.html">Castelo Rodrigo</a></li>
+            <li><a href="linhagem-da-beira.html">Linhares da Beira</a></li>
+            <li><a href="marialva.html">Marialva</a></li>
+            <li><a href="monsanto.html">Monsanto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slideshow -->
+    <div id="almeidaCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagens/almeida/almeida1.jpg" alt="Almeida">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/almeida/almeida2.jpg" alt="Almeida">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/almeida/almeida3.jpg" alt="Almeida">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/almeida/almeida4.jpg" alt="Almeida">
+            </div>
+        </div>
+
+        <!-- Controles do Carrossel -->
+        <a class="carousel-control-prev" href="#almeidaCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#almeidaCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+
+    <!-- Contêiner Flex para o Mapa e a Previsão do Tempo -->
+    <div class="mapa-e-tempo">
+        <!-- Mapa -->
+       <!-- Mapa -->
+<div class="mapa">
+    <h3>Como chegar a Almeida</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12236.945666355598!2d-6.9454306!3d40.7302634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3c42c12d537ed7%3A0x1a0c5b4f6fcfb331!2sAlmeida!5e0!3m2!1spt-PT!2spt!4v1698078164241!5m2!1spt-PT!2spt" 
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+        <!-- Previsão do Tempo -->
+        <div class="tempo">
+            <h3>Previsão do Tempo para Almeida</h3>
+            <div id="weather">
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="video-texto-container">
+        <!-- Vídeo -->
+        <div class="video-section">
+            <h3>Vídeo sobre Almeida</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4bO4qsWG10c" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    
+        <!-- Texto -->
+        <div class="texto-section">
+           
+            <p><br><br>
+                Almeida, perante a necessidade de modernizar as obsoletas estruturas medievais, empenhou-se após a Restauração, na construção de uma renovada máquina de guerra que se pudesse adaptar às novas armas de fogo, e que lhe permitisse selar a fronteira. A Praça-forte é de planta hexagonal, constituída por seis baluartes, aos quais correspondem o mesmo número de revelins.
+                
+            </p><br><br>           
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Autor do projeto: Sérgio Ricardo B. de Araújo 2024©All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para Previsão do Tempo -->
+    <script>
+        // Função para obter a previsão do tempo
+        async function getWeather() {
+            const response = await fetch(`https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1020500.json`);
+            const data = await response.json();
+
+            const weatherDiv = document.getElementById('weather');
+            weatherDiv.innerHTML = ''; 
+
+            data.data.forEach(day => {
+                const weatherDay = document.createElement('div');
+                weatherDay.classList.add('weather-day');
+
+                const date = new Date(day.forecastDate);
+
+                weatherDay.innerHTML = `
+                    <div>${date.toLocaleDateString('pt-PT')}</div>
+                    <div>Max: ${day.tMax}°C / Min: ${day.tMin}°C</div>
+                    <div class="weather-icon">💧 Probabilidade de precipitação: ${day.precipitaProb}%</div>
+                `;
+                weatherDiv.appendChild(weatherDay);
+            });
+        }
+
+        window.onload = getWeather;
+    </script>
+</body>
+
+</html>
